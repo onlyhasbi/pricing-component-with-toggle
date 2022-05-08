@@ -50,6 +50,7 @@ button {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  z-index: 0;
 }
 
 .plan-cards::before {
@@ -62,7 +63,7 @@ button {
   position: absolute;
   top: -3.25rem;
   right: -19.6rem;
-  z-index: -99;
+  z-index: -1;
 }
 
 .container {
