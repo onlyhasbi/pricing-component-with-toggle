@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("./normalize.css");
+
+:root {
+  /* --- Primary --- */
+  --light-gradient-color: hsl(236, 72%, 79%);
+  --dark-gradient-color: hsl(237, 63%, 64%);
+
+  /* --- Neutral --- */
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 62.5%;
+  color: var(--Dark-Grayish-Blue);
+}
+
+span,
+img,
+a {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  position: relative;
+  background-color: var(--Very-Light-Grayish-Blue);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 65rem;
+  background-image: url("../images/bg-top.svg");
+  background-repeat: round;
+  background-size: cover;
+  position: absolute;
+  top: -3.25rem;
+  right: -19.6rem;
+  z-index: -99;
+}
+
+.container {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  padding-top: 6.8rem;
+  padding-bottom: 7.09rem;
+}
+
+/* --- Plan Toggle Section ---  */
+
+.plan-toggle {
+  margin-bottom: 7.96rem;
+}
+
+.plan__title {
+  font-size: 3.2rem;
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+
+.plan__box {
+  display: flex;
+  gap: 2.36rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan__label {
+  font-size: 1.5rem;
+}
+
+.toggle {
+  position: relative;
+}
+
+.toggle__switcher {
+  background-image: linear-gradient(
+    to right,
+    var(--light-gradient-color),
+    var(--dark-gradient-color)
+  );
+  width: 5.64rem;
+  max-width: 100%;
+  height: 3.21rem;
+  max-height: 100%;
+  border-radius: 2rem;
+}
+
+.toggle__switcher:hover {
+  opacity: 0.5;
+}
+
+.toggle__switcher::before,
+.toggle__switcher::after {
+  content: "";
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.toggle__switcher::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+}
+
+.toggle__switcher::after {
+  width: 2.44rem;
+  height: 2.44rem;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  top: 0.4rem;
+  left: 0.4rem;
+  transition: left 0.25s ease-out;
+}
+
+#toggle:checked ~ .toggle__switcher::after {
+  left: 2.85rem;
+  top: 0.4rem;
+  transition: left 0.25s ease-in;
+}
+
+.toggle__check {
+  display: none;
+}
+
+/* --- Card Box Section ---  */
+
+.card-box {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.3rem;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 800px) {
+  .card-box {
+    gap: 0;
+    justify-content: center;
+  }
+}
+
+/* --- Active Card Box ---  */
+
+.card-active {
+  background-color: transparent;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--light-gradient-color),
+    var(--dark-gradient-color)
+  ) !important;
+
+  color: var(--Very-Light-Grayish-Blue);
+}
+
+.card-active .card__item {
+  color: #fff;
+}
+
+.card-active .btn-primary {
+  background: #fff;
+  color: var(--dark-gradient-color);
+}
+
+.card-active .card__item {
+  border-color: var(--Very-Light-Grayish-Blue);
+}
+
+.card-active .card__item:last-child {
+  border-color: var(--Very-Light-Grayish-Blue);
+}
+
+.card-active .btn:hover {
+  background: transparent;
+  outline: 1px solid var(--Very-Light-Grayish-Blue);
+  color: var(--Very-Light-Grayish-Blue);
+}
+
+.btn:hover {
+  background: transparent;
+  outline: 1px solid var(--dark-gradient-color);
+  color: var(--dark-gradient-color);
+}
+
+@media screen and (min-width: 800px) {
+  .card .card-active {
+    /* padding-top: 5.9rem;
+    padding-bottom: 5.35rem;
+    padding-left: 3.1rem;
+    padding-right: 3.1rem; */
+    padding: 5.9rem 3.1rem 5.35rem !important;
+  }
+}
+
+/* --- Card Section ---  */
+
+.card {
+  width: 100%;
+  max-width: 32.6rem;
+  padding: 3.6rem 2.8rem 3.1rem;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.05);
+}
+
+.card__level {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.label__dollar {
+  font-size: 3.98rem;
+}
+
+.label__price {
+  font-size: 7.13rem;
+}
+
+.card__list {
+  list-style-type: none;
+  margin: 3rem 0;
+}
+
+.card__item {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1.57rem;
+  border-top: 1px solid var(--Light-Grayish-Blue);
+  padding: 2rem 0;
+  color: var(--Grayish-Blue);
+}
+
+.card__item:last-child {
+  border-bottom: 1px solid var(--Light-Grayish-Blue);
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  width: 100%;
+  display: block;
+  padding: 1.5rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.34rem;
+  letter-spacing: 0.06rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-image: linear-gradient(
+    to right,
+    var(--light-gradient-color),
+    var(--dark-gradient-color)
+  );
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    margin: 0;
+  }
+
+  .card:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
